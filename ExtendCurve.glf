@@ -167,14 +167,10 @@ proc makeWindow { } {
     -side top -fill x
 
   set font [font actual [.top.lbl1 cget -font] -family]
-  set fontSize [font actual $font -size]
-  set crvFontValid [font create -family $font -weight bold \
-    -size [expr {int(1.1 * $fontSize)}]]
-  set crvFontInvalid [font create -family $font -slant italic \
-    -size [expr {int(1.1 * $fontSize)}]]
-
-  .top.lbl1 configure -font [font create -family $font -weight bold \
-    -size [expr {int(1.5 * $fontSize)}]]
+  set crvFontValid [font create -family $font -weight bold]
+  set crvFontInvalid [font create -family $font -slant italic]
+  
+  .top.lbl1 configure -font [font create -family $font -weight bold]
 
   pack [frame .buttons -width 300 -height 400] -padx 2 -pady 5
 
